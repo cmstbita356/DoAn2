@@ -1,7 +1,7 @@
 <?php
     include_once "db_module.php";
     include_once "product.php";
-    class product_module
+    class SanphamModel
     {
         public function CountAll()
         {

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/Sidebar.css">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/banner.css">
@@ -14,34 +14,43 @@
     <link rel="stylesheet" href="../styles/footer.css">
     
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/e50213ec74.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <?php session_start(); ?>
-    <div id="container">
-        <div id="header" style="position: relative !important; width: 100%">
+    <?php session_start(); 
+    ?>
+        <div id="container">
+            <div id="header">
                 <div class="header-top-wrap">
                     <div class="header-top-left">
-                        <p><i class="fa-solid fa-envelope"></i>cmstbita356@gmail.com | <i class="fa-solid fa-clock"></i>7:00AM to 5:00PM</p>
+                        <p>
+                            <i class="fa-solid fa-envelope"></i>cmstbita356@gmail.com | 
+                            <i class="fa-solid fa-clock"></i>7:00AM to 5:00PM</p>
                     </div>
                     <div class="header-top-right">
                         <div>
-                            <a href="https://www.facebook.com/nam.thang.7121" target="_blank"><i class="media-header fa-brands fa-facebook"></i></a>
-                            <a href="https://www.youtube.com/channel/UCPk5dOJ5jQGp70cFfB6hbXQ" target="_blank"><i class="media-header fa-brands fa-youtube"></i></i></a>
-                            <a href="https://discord.gg/AXK2TuV8" target="_blank"><i class="media-header fa-brands fa-discord"></i></i></a>
+                            <a href="https://www.facebook.com/nam.thang.7121" target="_blank">
+                                <i class="media-header fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCPk5dOJ5jQGp70cFfB6hbXQ" target="_blank">
+                                <i class="media-header fa-brands fa-youtube"></i>
+                            </a>
+                            <a href="https://discord.gg/AXK2TuV8" target="_blank">
+                                <i class="media-header fa-brands fa-discord"></i>
+                            </a>
                             <i class="fa-solid fa-user"></i>
                             <?php
-                                if(isset($_SESSION['username']))
-                                { 
+                                if (isset($_SESSION['username']))
+                                {
                                     echo
                                     "
                                         <label for='ckb_tk' id='lb_tk'>".$_SESSION['username']."</label><br>
                                         <input type='checkbox' id='ckb_tk'>
                                         <div id='tk'>
-                                            <a href='#'>Cài đặt tài khoản</a><br>   
+                                            <a href='#'>Cài đặt tài khoản</a><br>
                                             <a href='../controllers/xulydangxuat.php'>Đăng xuất</a>
                                         </div>
                                         
@@ -73,7 +82,9 @@
                             <ul>
                                 <li class="active"><a href="./" >Trang chủ</a></li>
                                 <li>
-                                    <a href="#pagesubmenu" class="dropdown-toggle" data-toggle="collapse" aria-expanded="false">Trang khác</a>
+                                    <a href="#pagesubmenu" class="dropdown-toggle" data-toggle="collapse" aria-expanded="false">
+                                        Trang khác
+                                    </a>
                                     <ul class="collapse" id="pagesubmenu">
                                         <li class="pl-4"><a href="#">Về chúng tôi</a></li>
                                         <li class="pl-4"><a href="#">Trang đăng nhập</a></li>
@@ -130,17 +141,113 @@
                                     }
                                 ?>
                             </div>
-                        </div>  
-                        
+                        </div>
                     </div>
                 </div>
                 
-        </div> 
-        <div id="content_ctsp">
+            </div> 
+            <div id="banner">
+                <div class="col-md-12 col-12">
+                    <div class="banner-content">
+                        <img src="../images/car-logo.png" alt="car-logo">
+                        <p style="font-size: 50px;"><strong>Tìm cho bạn một chiếc xe hoàn hảo</strong></p>
+                        <strong><p>For life – Vì cuộc sống của bạn</p></strong>
+                    </div>
+                </div>
+                <div class="adsearch-wrap">
+                    <div class="adsearch mr-5 ml-5">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-4 col-12">
+                                    <select id='time' name="time" class="form-control form-control-lg select" style="font-size: 17px; height: 50px;  margin-top: 5px">
+                                        <option value="0">Không</option>
+                                        <option value="Cũ">Xe cũ</option>
+                                        <option value="Mới">Xe mới</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <select id='maker' name="maker" class="form-control form-control-lg select" style="font-size: 17px; height: 50px; margin-top: 5px" >
+                                        <option value="0">Không</option>
+                                        <?php include_once "../Controllers/setSelectMaker.php"; ?>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <select id='price' name="price" class="form-control form-control-lg select" style="font-size: 17px; height: 50px; margin-top: 5px">
+                                        <option value="0">Không</option>
+                                        <option value="500000000">500.000.000</option>
+                                        <option value="1000000000">1.000.000.000</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12 col-12" id="col-select" style="align-items: center;">
+                                    <input type="button" id="select-button-banner" value="Tìm kiếm nâng cao" style="background-color: #D5A116; color: white" onclick="TKNC(1)">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="section" style="color: black;">
+                <nav aria-label="breadcrumb" style="font-size: 20px; margin-top: 20px">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item "><a href="./" >Trang chủ</a></li> 
+                        <li class="breadcrumb-item active">Sản phẩm</li> 
+                    </ol>
+                </nav>
+                <p style="text-align: center; font-size: 50px; margin-top: 10px"><strong>Sản phẩm</strong></p>
+                <div id='dssp'>
+                    <?php 
+                        include_once "../Controllers/SanphamController.php"; 
+                        $SanphamController = new SanphamController();
+                        $SanphamController->invoke();
+                    ?>
+                </div>
+            </div>
             
-            <?php include_once "../Controllers/xulychitietsp.php" ?>
-        </div>
-        <div class="footer">
+            <div class="article" style="color: black; margin-top: 10px;">
+                <div>
+                    <span style="font-size: 32px; float: left"><strong>Tin tức</strong></span>
+                    <nav class="navbar navbar-expand-sm bg-light" aria-label="navbar">
+                        <ul class="navbar-nav" style="font-size: 30px; float: left;">
+                            <li class="nav-item active">
+                                <a class="nav-link mr-5 ml-5" href="#">Nổi bật</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mr-5 ml-5" href="#">Tư vấn</a>
+                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link mr-5 ml-5" href="#">Đánh giá xe</a>
+                            </li>          
+                        </ul>
+                    </nav>
+                    <br style="clear:both;">
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-12 shadow" >
+                        <a href="#">
+                            <img src="../images/news1.jpg" alt="hình" style="width: 100%; height: 800px">
+                            <h1>Nút bấm truyền thống dễ thao tác hơn màn hình cảm ứng trên ô tô</h1>
+                        </a>
+                        
+                    </div>
+                    
+                    <div class="col-md-6 col-12 shadow">
+                        <div>
+                            <a href="#">
+                                <img src="../images/news2.jpg" alt="hình" style="width: 100%; height: 400px">
+                                <h1>Những lưu ý khi thay lốp dự phòng cho ô tô</h1>
+                            </a>
+                            
+                            <a href="#">
+                                <img src="../images/news3.jpg" alt="hình" style="width: 100%; height: 400px">
+                                <h1>Khám phá Mercedes-AMG GT3 Edition 55: chiếc xe đua phiên bản giới hạn</h1>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="footer">
                 <div class="row" id="footer-logoall">
                     <div class="col-md-4 col-12" id="footer-car-logo">
                         <img src="../images/car-logo.png" alt="logo" style="width: 200px;">
@@ -200,87 +307,23 @@
                     
                 </div>
             </div>
-    </div>
-
+        </div>
 </body>
-<script>
-        window.addEventListener('keydown',function(e){
-            if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13)
-            {
-                if(e.target.nodeName=='INPUT'&&e.target.type=='text')
-                {
-                    e.preventDefault();
-                    return false;
-                }
-            }
-        },true);
-        function Comment() 
+    <script>
+        function TKNC(pageNumber) 
         {
-            var msg = document.getElementById("msg_binhluan").value;
+            var time = document.getElementById("time").value;
+            var maker = document.getElementById("maker").value;
+            var price = document.getElementById("price").value;
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {   
+                if (this.readyState == 4 && this.status == 200) {
                 // Typical action to be performed when the document is ready:
-                document.getElementById("binhluan").innerHTML = xhttp.responseText;
+                document.getElementById("dssp").innerHTML = this.responseText;
                 }
             };
-            xhttp.open("GET", "../Controllers/xembinhluan.php?id="+<?php echo $_GET['id'] ?>+"&comment="+msg, true);
+            xhttp.open("GET", "../Controllers/xulytimkiemnc.php?page="+pageNumber+"&time="+time+"&maker="+maker+"&price="+price, true);
             xhttp.send();
         }
     </script>
-<style>
-.btn-binhluan .tooltiptext {
-  visibility: hidden;
-  width: 200px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-}
-
-.btn-binhluan:hover .tooltiptext {
-  visibility: visible;
-}
-    #content_ctsp
-    {
-        line-height: 60px;
-    }
-    #img_ctsp
-    {
-        height: 500px;
-    }
-    #name_ctsp
-    {
-        font-size: 40px;
-    }
-    #price_ctsp
-    {
-        font-size: 30px;
-        color: red;
-    }
-    #nsx_ctsp
-    {
-        font-size: 25px;
-    }
-    #state_ctsp
-    {
-        font-size: 25px;
-    }
-    #mota_ctsp
-    {
-        font-size: 25px;
-    }
-    #btn_ctsp
-    {
-        background-color: orange;
-        color: white;
-        font-size: 25px;
-        width: 200px;
-    }
-</style>
 </html>

@@ -1,11 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
 <?php
-    include_once "../Models/product_module.php";
-    $page = isset($_GET["page"])? $_GET["page"]:1;
-    $page = is_numeric($page)?$page : 1;
-    $pagesize = 6;
-    $from = ($page-1)*$pagesize;
-    $pm = new product_module();
-    $ListProduct = $pm->getProductListLimited($from, $pagesize); 
     echo "<div class='row mt-5'>";
     foreach($ListProduct as $Product)
     {
@@ -26,8 +22,6 @@
         ";
     }
     echo "</div>";
-    
-    $total = ceil($pm->CountAll()/$pagesize);
     echo "
     <div style='display: inline-flex; background-color: #A3A2A0; font-size: 20px; margin-left: 45%; margin-top: 10px;'>
     Page: ";
@@ -40,3 +34,5 @@
     }
     echo "</div>"
 ?>
+</body>
+</html>
