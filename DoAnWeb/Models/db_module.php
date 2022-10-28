@@ -1,5 +1,5 @@
 <?php
-    require_once "../config.php";
+    require_once "../../config.php";
     function ConnectDatabase(&$link)
     {
         $link = mysqli_connect(HOST, USER, PASSWORD, DB);

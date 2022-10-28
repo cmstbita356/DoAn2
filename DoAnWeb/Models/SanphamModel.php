@@ -1,6 +1,6 @@
 <?php
     include_once "db_module.php";
-    include_once "product.php";
+    include_once "Sanpham.php"; 
     class SanphamModel
     {
         public function CountAll()
@@ -38,7 +38,7 @@
             $data = array();
             while($rows = mysqli_fetch_assoc($result))
             {
-                $product = new Product($rows["id"], $rows["name"], $rows["price"], $rows["desc"], $rows["img"], $rows["id_maker"], $rows["time"]);
+                $product = new Sanpham($rows["id"], $rows["name"], $rows["price"], $rows["desc"], $rows["img"], $rows["id_maker"], $rows["time"]);
                 array_push($data, $product);
             }
             ClearMemory($link, $result);
@@ -52,7 +52,7 @@
             $data = array();
             while($rows = mysqli_fetch_assoc($result))
             {
-                $product = new Product($rows["id"], $rows["name"], $rows["price"], $rows["desc"], $rows["img"], $rows["id_maker"], $rows["time"]);
+                $product = new Sanpham($rows["id"], $rows["name"], $rows["price"], $rows["desc"], $rows["img"], $rows["id_maker"], $rows["time"]);
                 array_push($data, $product);
             }
             ClearMemory($link, $result);
@@ -66,7 +66,7 @@
             $data = array();
             while($rows = mysqli_fetch_assoc($result))
             {
-                $product = new Product($rows["id"], $rows["name"], $rows["price"], $rows["desc"],  $rows["img"], $rows["id_maker"], $rows["time"]);
+                $product = new Sanpham($rows["id"], $rows["name"], $rows["price"], $rows["desc"],  $rows["img"], $rows["id_maker"], $rows["time"]);
                 array_push($data, $product);
             }
             ClearMemory($link, $result);
@@ -84,7 +84,7 @@
             $data = array();
             while($rows = mysqli_fetch_assoc($result))
             {
-                $product = new Product($rows["id"], $rows["name"], $rows["price"], $rows["desc"],  $rows["img"], $rows["id_maker"], $rows["time"]);
+                $product = new Sanpham($rows["id"], $rows["name"], $rows["price"], $rows["desc"],  $rows["img"], $rows["id_maker"], $rows["time"]);
                 array_push($data, $product);
             }
             ClearMemory($link, $result);
