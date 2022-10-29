@@ -18,12 +18,15 @@
                 </button>
             ";
         }
+        include_once "../../Controllers/CommentController.php";
+        $controller = new CommentController();
+        $controller->TaoComment();
         foreach ($ListComment as $comment)
         {
             echo
             "
                 <div class='media'>
-                    <img src='../images/user.png' alt='img' class='p-3 ml-2 rounded-circle' style='width:80px'>
+                    <img src='../../images/user.png' alt='img' class='p-3 ml-2 rounded-circle' style='width:80px'>
                     <div class='media-body p-3' style='font-size: 20px;'>
                         <h3> <strong>$comment->username</strong> <small> <em>$comment->date</em></small></h3>
                         <p>$comment->msg</p>
@@ -34,7 +37,7 @@
         echo 
         "
             <form>
-                <img src='../images/user.png' alt='img' class='p-3 ml-2 rounded-circle' style='width:80px; display: inline-block'>
+                <img src='../../images/user.png' alt='img' class='p-3 ml-2 rounded-circle' style='width:80px; display: inline-block'>
                 <input id ='msg_binhluan' type='text' placeholder='Bình luận' name='comment'>
                 $str
             </form>

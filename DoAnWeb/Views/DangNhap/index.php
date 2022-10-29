@@ -12,15 +12,45 @@
     <link rel="stylesheet" href="../../styles/section.css">
     <link rel="stylesheet" href="../../styles/article.css">
     <link rel="stylesheet" href="../../styles/footer.css">
-    
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/e50213ec74.js" crossorigin="anonymous"></script>
 </head>
+<?php
+    session_start();
+    
+    if(isset($_GET['msg']))
+    {
+        $msg = $_GET["msg"];
+        if($msg == "dn_notduplicate")
+        {
+            $errormsg = "Username hoặc Password không trùng khớp";
+        }
+        if($msg == "dk_done")
+        {
+            $announce = "Đăng ký thành công";
+        }
+        if($msg == "dn_done")
+        {
+            if (isset($_SESSION['previous'])) 
+            {
+                header("Location: " . $_SESSION['previous']);
+            }
+            else
+            {
+                header("Location: index.php");
+            }
+        }
+        
+    }
+    else
+        {
+            $_SESSION['previous'] = $_SERVER['HTTP_REFERER'];
+        }
+?>
 <body>
-    <?php session_start(); ?>
     <div id="container">
         <div id="header" style="position: relative !important; width: 100%">
                 <div class="header-top-wrap">
@@ -28,35 +58,13 @@
                         <p><i class="fa-solid fa-envelope"></i>cmstbita356@gmail.com | <i class="fa-solid fa-clock"></i>7:00AM to 5:00PM</p>
                     </div>
                     <div class="header-top-right">
-                        <div>
+                        <p>
                             <a href="https://www.facebook.com/nam.thang.7121" target="_blank"><i class="media-header fa-brands fa-facebook"></i></a>
                             <a href="https://www.youtube.com/channel/UCPk5dOJ5jQGp70cFfB6hbXQ" target="_blank"><i class="media-header fa-brands fa-youtube"></i></i></a>
                             <a href="https://discord.gg/AXK2TuV8" target="_blank"><i class="media-header fa-brands fa-discord"></i></i></a>
                             <i class="fa-solid fa-user"></i>
-                            <?php
-                                if(isset($_SESSION['username']))
-                                { 
-                                    echo
-                                    "
-                                        <label for='ckb_tk' id='lb_tk'>".$_SESSION['username']."</label><br>
-                                        <input type='checkbox' id='ckb_tk'>
-                                        <div id='tk'>
-                                            <a href='#'>Cài đặt tài khoản</a><br>   
-                                            <a href='../DangXuat'>Đăng xuất</a>
-                                        </div>
-                                        
-                                        
-                                    ";
-                                }
-                                else
-                                {
-                                    echo "<a href='../DangNhap'>Đăng nhập</a> | <a href='../DangKy'>Đăng ký</a>";
-                                }
-                            ?>
-                            
-                            </div>
-                        
-                        
+                            <a>Đăng nhập</a> | <a href="../DangKy">Đăng ký</a>
+                        </p>
                     </div>
                 </div> 
                 <div class="header-main-wrap" >
@@ -71,7 +79,7 @@
                                 <img src="../../images/car-logo.png" alt="car-logo">
                             </div>
                             <ul>
-                                <li class="active"><a href="../Home" >Trang chủ</a></li>
+                                <li class="active"><a href="#" >Trang chủ</a></li>
                                 <li>
                                     <a href="#pagesubmenu" class="dropdown-toggle" data-toggle="collapse" aria-expanded="false">Trang khác</a>
                                     <ul class="collapse" id="pagesubmenu">
@@ -91,64 +99,62 @@
                             </ul>
                         </div>
                         <div class="searchBar">
-                            <form action="" id="searchBox">
+                            <form action="timkiem.php" id="searchBox">
                                 <input type="text" id="searchText" placeholder="Nhập từ khoá" name="keyword">
                                 <button type="submit" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
                             </form>
                         </div>
-                        <div class="cart-wrap">
-                            <div class="cart"><i class="fa-solid fa-cart-shopping"></i></div>          
-                            <div class="cart-show">
-                                <?php
-                                    if(isset($_SESSION['giohang']))
-                                    {
-                                        $giohang = $_SESSION["giohang"];
-                                        foreach($giohang as $v)
-                                        {
-                                            echo
-                                            "
-                                                <div style='background-color: #D6D4D3'>
-                                                    <div style='float:left'>
-                                                        <img id='img-cart-bar' src='".$v['img']."'>
-                                                    </div>
-                                                    <div style='float:left'>
-                                                        ".$v['ten']." <br>
-                                                        ".number_format($v['gia'])." VND <br>
-                                                    </div>
-                                                    <br style='clear:both'>
-                                                </div>
-                                            ";
-                                        }
-                                        echo 
-                                        "   
-                                            <a href='../GioHang' style='color: #EE3B0B'>
-                                                <button style='width:100%; background-color: #3D3838'>
-                                                    Xem chi tiết
-                                                </button>
-                                            </a>
-                                        ";
-                                    }
-                                ?>
-                            </div>
-                        </div>          
+                        <div class="cart"><i class="fa-solid fa-cart-shopping"></i></div>          
                         
                     </div>
                 </div>
                 
         </div> 
-        <div class="section">
-            <nav aria-label="breadcrumb" style="font-size: 20px; margin-top: 20px">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item "><a href="../Home/" >Trang chủ</a></li> 
-                    <li class="breadcrumb-item ">Sản phẩm</li> 
-                    <li class="breadcrumb-item active">Kết quả tìm kiếm</li> 
-                </ol>
-            </nav>
-            <?php 
-                include_once "../../Controllers/SanphamController.php"; 
-                $SanphamController = new SanphamController();
-                $SanphamController->invoke();
-            ?>
+        <div id="content-dn">
+            <div id="breadcrump" >
+                <nav aria-label="breadcrumb" style="font-size: 20px;">
+                    <ol class="breadcrumb" style="background-color: orange;">
+                        <li class="breadcrumb-item "><a href="../Home/index.php" style="color: black">Trang chủ</a></li> 
+                        <li class="breadcrumb-item active" style="color: black">Đăng nhập</li> 
+                    </ol>
+                </nav>
+            </div>
+            <form id="form-dn" action="xulydangnhap.php" method="post">
+                <h1 style="text-align:center; padding-top: 20px;">Đăng nhập</h1>
+                <div id="dn_errormsg">
+                    <?php 
+                    if(isset($errormsg)) 
+                    {
+                        echo $errormsg;
+                        unset($errormsg);
+                    }
+                    ?> 
+                </div>
+                <div id="dkdn_announce">
+                    <?php 
+                    if(isset($announce)) 
+                    {
+                        echo $announce;
+                        unset($announce);
+                    }
+                    ?> 
+                </div>
+                <div class="form-group">
+                    <label for="username">Username: </label><br>
+                    <input type="text" id="username" name="username" placeholder="Nhập tài khoản vào đây">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password: </label><br>
+                    <input type="password" id="password" name="password" placeholder="Nhập mật khẩu vào đây ">
+                </div>
+                <div class="form-group">
+                    <input id="submit-dn" type="submit" Value="Đăng nhập">
+                </div>
+                <div id="dn-chuyenlink">
+                    <p>Bạn chưa có tài khoản ? <a href="../DangKy">Đăng ký</a></p>
+                    <p><a href="#">Bạn quên mật khẩu ?</a></p>
+                </div>
+            </form>
         </div>
         <div class="footer">
                 <div class="row" id="footer-logoall">
@@ -212,4 +218,77 @@
             </div>
     </div>
 </body>
+<style>
+    #dn_errormsg
+    {
+        color: red;
+        background-color: yellow;
+        width: 100%;
+        margin-top: 10px;
+        padding-left: 10px;
+    }
+    #dkdn_announce
+    {
+        color: black;
+        background-color: green;
+        width: 100%;
+        margin-top: 10px;
+        padding-left: 10px;
+    }
+    #content-dn
+    {
+        background-image: url(../../images/background4.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding-bottom: 20px;
+    }
+    #form-dn
+    {
+        background-color: white;
+        margin: 50px auto;
+        margin-left: 30%;
+        margin-right: 30%;
+        box-shadow: 10px 10px #E8B972;
+        font-size: 20px;
+        border-radius: 20px;
+    }
+    #form-dn .form-group
+    {
+        margin-left: 20px;
+        margin-top: 30px;
+    }
+    #form-dn .form-group input
+    {
+        border: none;
+        background-color: lightgrey;
+        width: 90%;
+        padding: 12px 20px;
+    }
+    #form-dn .form-group input:focus
+    {
+        background-color: #E8B972;
+    }
+    #submit-dn
+    {
+        background-color: #D5A01C !important;
+        width: 50% !important;
+        margin-left: 20%;
+    }
+    #dn-chuyenlink
+    {
+        font-size: 17px;
+        margin-left: 15px;
+        margin-top: 50px;
+        padding-bottom: 25px;
+    }
+@media screen and (max-width: 999px) {
+    #form-dn
+    {
+        margin-left: 15%;
+        margin-right: 15%;
+        font-size: 20px;
+    }
+}
+</style>
 </html>

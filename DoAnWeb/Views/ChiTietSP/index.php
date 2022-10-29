@@ -42,7 +42,7 @@
                                         <input type='checkbox' id='ckb_tk'>
                                         <div id='tk'>
                                             <a href='#'>Cài đặt tài khoản</a><br>   
-                                            <a href='../controllers/xulydangxuat.php'>Đăng xuất</a>
+                                            <a href='../DangXuat'>Đăng xuất</a>
                                         </div>
                                         
                                         
@@ -50,7 +50,7 @@
                                 }
                                 else
                                 {
-                                    echo "<a href='dangnhap.php'>Đăng nhập</a> | <a href='dangky.php'>Đăng ký</a>";
+                                    echo "<a href='../DangNhap'>Đăng nhập</a> | <a href='../DangKy'>Đăng ký</a>";
                                 }
                             ?>
                             
@@ -68,10 +68,10 @@
                         </label>  
                         <div id="sidebar">
                             <div class="sidebar-header">
-                                <img src="../images/car-logo.png" alt="car-logo">
+                                <img src="../../images/car-logo.png" alt="car-logo">
                             </div>
                             <ul>
-                                <li class="active"><a href="./" >Trang chủ</a></li>
+                                <li class="active"><a href="../Home" >Trang chủ</a></li>
                                 <li>
                                     <a href="#pagesubmenu" class="dropdown-toggle" data-toggle="collapse" aria-expanded="false">Trang khác</a>
                                     <ul class="collapse" id="pagesubmenu">
@@ -91,7 +91,7 @@
                             </ul>
                         </div>
                         <div class="searchBar">
-                            <form action="timkiem.php" id="searchBox">
+                            <form action="../TimKiem/TimKiem" id="searchBox">
                                 <input type="text" id="searchText" placeholder="Nhập từ khoá" name="keyword">
                                 <button type="submit" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
                             </form>
@@ -121,7 +121,7 @@
                                         }
                                         echo 
                                         "   
-                                            <a href='giohang.php' style='color: #EE3B0B'>
+                                            <a href='../GioHang' style='color: #EE3B0B'>
                                                 <button style='width:100%; background-color: #3D3838'>
                                                     Xem chi tiết
                                                 </button>
@@ -147,13 +147,13 @@
         <div class="footer">
                 <div class="row" id="footer-logoall">
                     <div class="col-md-4 col-12" id="footer-car-logo">
-                        <img src="../images/car-logo.png" alt="logo" style="width: 200px;">
+                        <img src="../../images/car-logo.png" alt="logo" style="width: 200px;">
                     </div>
                     <div class="col-md-8 col-12" id="footer-otherlogo">
-                        <img class="footer-logo" src="../images/car-logo-2.png" alt="" >
-                        <img class="footer-logo" src="../images/car-logo-3.png" alt="">
-                        <img class="footer-logo" src="../images/car-logo-4.png" alt="">
-                        <img class="footer-logo" src="../images/car-logo-5.png" alt="">
+                        <img class="footer-logo" src="../../images/car-logo-2.png" alt="" >
+                        <img class="footer-logo" src="../../images/car-logo-3.png" alt="">
+                        <img class="footer-logo" src="../../images/car-logo-4.png" alt="">
+                        <img class="footer-logo" src="../../images/car-logo-5.png" alt="">
                     </div>
                 </div>
                 <div class="footer-main">
@@ -228,7 +228,7 @@
                 document.getElementById("binhluan").innerHTML = xhttp.responseText;
                 }
             };
-            xhttp.open("GET", "../Controllers/xembinhluan.php?id="+<?php echo $_GET['id'] ?>+"&comment="+msg, true);
+            xhttp.open("GET", "../Comment/TaoComment.php?id="+<?php echo $_GET['id'] ?>+"&comment="+msg, true);
             xhttp.send();
         }
     </script>
