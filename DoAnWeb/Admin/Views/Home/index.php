@@ -23,6 +23,7 @@
                     <img class = 'logo-header' src="../../../images/car-logo.png" alt="logo" style="width: 100px">
                     <a class="ml-4" href="./">Sản phẩm</a>
                     <a class="ml-4" href="../PhanQuyen">Phân quyền</a>
+                    <a class="ml-4" href="../DonHang">Đơn hàng</a>
                 </div>
                 <div class="header-right">
                     <img class="rounded-circle" style='width:80px' src="../../imgs/image-account.jpg" alt="">
@@ -38,7 +39,7 @@
         <div class='content'>
             <div style='text-align: center'>
                 <div class="searchBar">
-                    <form action="timkiem.php" id="searchBox">
+                    <form action="../TimKiem/" id="searchBox">
                         <input type="text" id="searchText" placeholder="Nhập từ khoá" name="keyword">
                         <button type="submit" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </form>

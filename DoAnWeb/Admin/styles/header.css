@@ -10,7 +10,7 @@
 }
 .header-left
 {
-    font-size: 25px;  
+    font-size: 15px;  
     display: inline-block;
 }
 .header-left a
@@ -42,4 +42,11 @@
 .header-right
 {
     float: right;
+}
+@media screen and (max-width: 999px) {
+    .header-left
+    {
+        font-size: 15px;  
+        display: inline-block;
+    }
 }

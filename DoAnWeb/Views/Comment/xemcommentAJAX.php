@@ -1,4 +1,5 @@
 <?php
+        session_start();
         if(isset($_SESSION['username']))
         {
             $str = 
@@ -18,9 +19,6 @@
                 </button>
             ";
         }
-        // include_once "../../Controllers/CommentController.php";
-        // $controller = new CommentController();
-        // $controller->TaoComment();
         foreach ($ListComment as $comment)
         {
             echo

@@ -142,6 +142,16 @@
                                 ?>
                             </div>
                         </div>
+                        <nav id='header-content' class="navbar navbar-expand-sm" aria-label="navbar" style='float: right'>
+                        <ul class="navbar-nav" style="font-size: 25px; display: inline-block;">
+                            <li class="nav-item active">
+                                <a id='header-content-home' class="nav-link mr-5 ml-5" href="../Home/index.php" >Trang chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id='header-content-feedback' class="nav-link mr-5 ml-5" href="#" >Feedback</a>
+                             </li>
+                        </ul>
+                        </nav>
                     </div>
                 </div>
                 

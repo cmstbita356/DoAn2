@@ -141,6 +141,16 @@
                                 ?>
                             </div>
                         </div>
+                        <nav id='header-content' class="navbar navbar-expand-sm" aria-label="navbar" style='float: right'>
+                        <ul class="navbar-nav" style="font-size: 25px; display: inline-block;">
+                            <li class="nav-item active">
+                                <a id='header-content-home' class="nav-link mr-5 ml-5" href="../Home/index.php" >Trang chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id='header-content-feedback' class="nav-link mr-5 ml-5" href="#" >Feedback</a>
+                             </li>
+                        </ul>
+                        </nav>
                     </div>
                 </div>
                 
@@ -203,18 +213,29 @@
                     <p style='font-size: 20px; color: red;'> Tổng số tiền: <?php echo number_format($controller->TinhTien())." VND"; ?></p>
 
                     <p style='font-size: 40px; text-align: center'>Thanh toán</p>
-                    <form action="" style="font-size: 20px;">
-                        <label for="diachi">Địa chỉ: </label>
-                        <input style='width: 70%' type="text" id="diachi" name="diachi"><br>
-                        <input style='margin-top: 20px;' type="submit" value="Thanh toán">
-                    </form>
+                    <button type="button" style="font-size: 20px; margin-left: 30%; width: 40%; height: 100px" data-toggle='modal' data-target='#mymodal'>Thanh toán</button>
+                    <div id="mymodal" class="modal" style='margin-top: 10%'>
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                        <h3>Bạn có chắc là muốn thanh toán không ?</h3>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>  
+                                
+                                <div style='padding-bottom: 20px; padding-top: 20px;'>
+                                    <a href='../DonHang/index.php' type="button" id='thanhtoan' class="btn-primary" style='margin-left: 10%; font-size: 20px; width: 30%; text-align: center'>Có</a>
+                                    <button type="button" class="btn-primary" data-dismiss="modal" style='margin-left: 20%; font-size: 20px; width: 30%'>Không</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="footer">
                 <div class="row" id="footer-logoall">
                     <div class="col-md-4 col-12" id="footer-car-logo">
-                        <img src="../images/car-logo.png" alt="logo" style="width: 200px;">
+                        <img src="../../images/car-logo.png" alt="logo" style="width: 200px;">
                     </div>
                     <div class="col-md-8 col-12" id="footer-otherlogo">
                         <img class="footer-logo" src="../../images/car-logo-2.png" alt="" >
@@ -270,11 +291,20 @@
                     </div>
                     
                 </div>
-            </div>
+        </div>
     </div>
     
 </body>
 <style>
+    #yesno
+    {
+        position: absolute;
+        left: 30%;
+        top: 30%;
+        width: 40%;
+        height: 40%;
+        background-color: white;
+    }
     .product-cart
     {
         background-color: #D6D4D3;
@@ -310,4 +340,7 @@
         background-color: #E8B972;
     }
 </style>
+<script>
+    
+</script>
 </html>

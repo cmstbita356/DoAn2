@@ -21,7 +21,7 @@
             <div class='header-wrap'>
                 <div class='header-left'>
                     <img class = 'logo-header' src="../../../images/car-logo.png" alt="logo" style="width: 100px">
-                    <a class="ml-4" href="../Home">Sản phẩm</a>
+                    <a class="ml-4" href="./">Sản phẩm</a>
                     <a class="ml-4" href="../PhanQuyen">Phân quyền</a>
                     <a class="ml-4" href="../DonHang">Đơn hàng</a>
                 </div>
@@ -36,17 +36,11 @@
                 </div>
             </div>
         </div>
-        <div class='content'>    
-            <nav aria-label="breadcrumb" style="font-size: 20px; margin-top: 20px">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item "><a href="../Home" >Sản phẩm</a></li> 
-                    <li class="breadcrumb-item active">Khôi phục sản phẩm</li> 
-                </ol>
-            </nav>        
-            <?php 
-            include_once "../../Controllers/KhoiPhucController.php"; 
-            $controller = new KhoiPhucController();
-            $controller->XemKhoiPhuc();
+        <div class='content'>
+            <?php
+            include_once "../../Controllers/ChitietdhController.php";
+            $controller = new ChitietdhController();
+            $controller->XemChiTiet();
             ?>
         </div>
     </div>

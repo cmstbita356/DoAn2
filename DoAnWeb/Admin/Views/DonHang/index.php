@@ -36,17 +36,11 @@
                 </div>
             </div>
         </div>
-        <div class='content'>    
-            <nav aria-label="breadcrumb" style="font-size: 20px; margin-top: 20px">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item "><a href="../Home" >Sản phẩm</a></li> 
-                    <li class="breadcrumb-item active">Khôi phục sản phẩm</li> 
-                </ol>
-            </nav>        
-            <?php 
-            include_once "../../Controllers/KhoiPhucController.php"; 
-            $controller = new KhoiPhucController();
-            $controller->XemKhoiPhuc();
+        <div class='content'>
+            <?php
+            include_once "../../Controllers/DonHangController.php";
+            $controller = new DonHangController();
+            $controller->XemDH();
             ?>
         </div>
     </div>

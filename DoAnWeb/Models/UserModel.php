@@ -43,6 +43,22 @@
                 return false;
             }
         }
+        function getId()
+        {
+            if(isset($_SESSION['username']))
+            {
+                $link = null;
+                ConnectDatabase($link);
+                $username = $_SESSION['username'];
+                $result = ExecuteQuery($link, "select id from tbl_user where username = '$username'");
+                $row = mysqli_fetch_row($result);
+                return $row[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
     
 ?>

@@ -131,7 +131,16 @@
                                 ?>
                             </div>
                         </div>  
-                        
+                        <nav id='header-content' class="navbar navbar-expand-sm" aria-label="navbar" style='float: right'>
+                        <ul class="navbar-nav" style="font-size: 25px; display: inline-block;">
+                            <li class="nav-item active">
+                                <a id='header-content-home' class="nav-link mr-5 ml-5" href="../Home/index.php" >Trang chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id='header-content-feedback' class="nav-link mr-5 ml-5" href="#" >Feedback</a>
+                             </li>
+                        </ul>
+                        </nav>
                     </div>
                 </div>
                 
@@ -218,7 +227,19 @@
                 }
             }
         },true);
-        function Comment() 
+        function XemComment(pagenumber)
+        {
+            let xhttp2 = new XMLHttpRequest();
+            xhttp2.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {   
+                // Typical action to be performed when the document is ready:
+                document.getElementById("binhluan").innerHTML = xhttp2.responseText;
+                }
+            };
+            xhttp2.open("GET", "../Comment/index.php?page="+pagenumber+"&id="+<?php echo $_GET['id'] ?>+"&ajax=true", true);
+            xhttp2.send();
+        }
+        function TaoComment() 
         {
             var msg = document.getElementById("msg_binhluan").value;
             var xhttp = new XMLHttpRequest();

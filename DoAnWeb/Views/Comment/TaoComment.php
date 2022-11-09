@@ -6,7 +6,7 @@ session_start();
                 {
                     $str = 
                     "
-                        <button id='dang_binhluan' type='button' onclick='Comment()' class='btn-binhluan btn btn-success ml-5' style='font-size: 20px; border-radius: 10px;'>
+                        <button id='dang_binhluan' type='button' onclick='TaoComment()' class='btn-binhluan btn btn-success ml-5' style='font-size: 20px; border-radius: 10px;'>
                             Đăng
                         </button>
                     ";
@@ -15,7 +15,7 @@ session_start();
                 {
                     $str = 
                     "
-                        <button id='dang_binhluan' type='button' onclick='Comment()' class='btn-binhluan btn btn-success ml-5' style='font-size: 20px; border-radius: 10px;' disabled>
+                        <button id='dang_binhluan' type='button' onclick='TaoComment()' class='btn-binhluan btn btn-success ml-5' style='font-size: 20px; border-radius: 10px;' disabled>
                             Đăng
                             <span class='tooltiptext'>Vui lòng đăng nhập</span>
                         </button>

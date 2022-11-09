@@ -105,14 +105,23 @@
                             </form>
                         </div>
                         <div class="cart"><i class="fa-solid fa-cart-shopping"></i></div>          
-                        
+                        <nav id='header-content' class="navbar navbar-expand-sm" aria-label="navbar" style='float: right; height: 15px;'>
+                        <ul class="navbar-nav" style="font-size: 25px; display: inline-block;">
+                            <li class="nav-item active">
+                                <a id='header-content-home' class="nav-link mr-5 ml-5" href="../Home/index.php" >Trang chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id='header-content-feedback' class="nav-link mr-5 ml-5" href="#" >Feedback</a>
+                             </li>
+                        </ul>
+                        </nav>
                     </div>
                 </div>
                 
         </div> 
         <div id="content-dn">
             <div id="breadcrump" >
-                <nav aria-label="breadcrumb" style="font-size: 20px;">
+                <nav aria-label="breadcrumb" style="font-size: 20px; margin-top: 3px;">
                     <ol class="breadcrumb" style="background-color: orange;">
                         <li class="breadcrumb-item "><a href="../Home/index.php" style="color: black">Trang chủ</a></li> 
                         <li class="breadcrumb-item active" style="color: black">Đăng nhập</li> 

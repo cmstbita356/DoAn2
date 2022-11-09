@@ -131,6 +131,7 @@
         width: 250px;
         font-size: 15px;
     }
+
     #tk
     {
         display: none;
@@ -146,6 +147,10 @@
     #ckb_tk:checked + #tk
     {
         display: inline-block ;
+    }
+    #header-content
+    {
+        display: none;
     }
 /* pc */
 @media screen and (min-width: 1000px) {
@@ -192,6 +197,22 @@
         width: 350px;
         font-size: 20px;
         top: 120px;
+    }
+    #header-content
+    {
+        display: block;
+    }
+    #header-content-home
+    {
+        color: white;
+    }
+    #header-content-feedback
+    {
+        color: white;
+    }
+    #header-content li:hover a
+    {
+        color: orange;
     }
     .searchBar
     {

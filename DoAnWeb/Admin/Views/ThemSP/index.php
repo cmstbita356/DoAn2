@@ -31,6 +31,7 @@
                     <img class = 'logo-header' src="../../../images/car-logo.png" alt="logo" style="width: 100px">
                     <a class="ml-4" href="../Home">Sản phẩm</a>
                     <a class="ml-4" href="../PhanQuyen">Phân quyền</a>
+                    <a class="ml-4" href="../DonHang">Đơn hàng</a>
                 </div>
                 <div class="header-right">
                     <img class="rounded-circle" style='width:80px' src="../../imgs/image-account.jpg" alt="">

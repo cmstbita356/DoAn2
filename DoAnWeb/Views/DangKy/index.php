@@ -58,7 +58,7 @@
                             <a href="https://www.youtube.com/channel/UCPk5dOJ5jQGp70cFfB6hbXQ" target="_blank"><i class="media-header fa-brands fa-youtube"></i></i></a>
                             <a href="https://discord.gg/AXK2TuV8" target="_blank"><i class="media-header fa-brands fa-discord"></i></i></a>
                             <i class="fa-solid fa-user"></i>
-                            <a href="../DangNhap">Đăng nhập</a> | <a href="dangky.php">Đăng ký</a>
+                            <a href="../DangNhap">Đăng nhập</a> | <a>Đăng ký</a>
                         </p>
                     </div>
                 </div> 
@@ -74,7 +74,7 @@
                                 <img src="../../images/car-logo.png" alt="car-logo">
                             </div>
                             <ul>
-                                <li class="active"><a href="#" >Trang chủ</a></li>
+                                <li class="active"><a href="../Home/index.php" >Trang chủ</a></li>
                                 <li>
                                     <a href="#pagesubmenu" class="dropdown-toggle" data-toggle="collapse" aria-expanded="false">Trang khác</a>
                                     <ul class="collapse" id="pagesubmenu">
@@ -100,16 +100,25 @@
                             </form>
                         </div>
                         <div class="cart"><i class="fa-solid fa-cart-shopping"></i></div>          
-                        
+                        <nav id='header-content' class="navbar navbar-expand-sm" aria-label="navbar" style='float: right; height: 15px;'>
+                        <ul class="navbar-nav" style="font-size: 25px; display: inline-block;">
+                            <li class="nav-item active">
+                                <a id='header-content-home' class="nav-link mr-5 ml-5" href="../Home/index.php" >Trang chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id='header-content-feedback' class="nav-link mr-5 ml-5" href="#" >Feedback</a>
+                             </li>
+                        </ul>
+                        </nav>
                     </div>
                 </div>
                 
         </div> 
         <div id="content-dangky">
-            <div id="breadcrump" >
-                <nav aria-label="breadcrumb" style="font-size: 20px;">
+            <div id="breadcrump">
+                <nav aria-label="breadcrumb" style="font-size: 20px; margin-top: 3px;">
                     <ol class="breadcrumb" style="background-color: orange;">
-                        <li class="breadcrumb-item "><a href="../Views/index.php" style="color: black">Trang chủ</a></li> 
+                        <li class="breadcrumb-item "><a href="../Home/index.php" style="color: black">Trang chủ</a></li> 
                         <li class="breadcrumb-item active" style="color: black">Đăng ký</li> 
                     </ol>
                 </nav>

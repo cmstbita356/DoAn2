@@ -29,9 +29,9 @@
                 <td style='text-align: center; width: 200px;'>".number_format($Product->price)."</td>
                 <td><img src='".$Product->img."' style='width: 200px;'></td>
                 <td style='text-align: center; width: 200px;'>
-                    <a href='#'>Xem chi tiết</a><br>
-                    <a href='#'>Sửa</a><br>
-                    <a href='#'>Xóa</a>
+                <a href='../ChiTietSP/index.php?id=".$Product->getid()."'>Xem chi tiết</a><br>
+                <a href='../SuaSP/index.php?id=".$Product->getid()."'>Sửa</a><br>
+                <a href='../XoaSP/index.php?id=".$Product->getid()."'>Xóa</a>
                 </td>
             </tr>
         ";
