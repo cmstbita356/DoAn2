@@ -7,9 +7,9 @@
         <table style='font-size: 20px; margin-top: 10px;'>
             <tr>
                 <th style='text-align: center; '>Id</th>
-                <th style='text-align: center; '>Id_User</th>
-                <th style='text-align: center; '>Thành tiền</th>
-                <th style='text-align: center; '>Ngày</th> 
+                <th style='text-align: center; '>Tên sản phẩm</th>
+                <th style='text-align: center; '>Giá</th>
+                <th style='text-align: center; '>Hình</th> 
                 <th style='text-align: center; '></th> 
             </tr>
     ";
