@@ -188,8 +188,8 @@
                                 <div class="col-md-4 col-12">
                                     <select id='price' name="price" class="form-control form-control-lg select" style="font-size: 17px; height: 50px; margin-top: 5px">
                                         <option value="0">Không</option>
-                                        <option value="500000000">500.000.000</option>
-                                        <option value="1000000000">1.000.000.000</option>
+                                        <option value="500000000"> Giá nhỏ hơn 500.000.000</option>
+                                        <option value="1000000000"> Giá Nhỏ hơn 1.000.000.000</option>
                                     </select>
                                 </div>
                                 <div class="col-md-12 col-12" id="col-select" style="align-items: center;">
@@ -238,7 +238,7 @@
                 <div class="row">
                     <div class="col-md-6 col-12 shadow" >
                         <a href="#">
-                            <img src="../images/news1.jpg" alt="hình" style="width: 100%; height: 800px">
+                            <img src="../../images/news1.jpg" alt="hình" style="width: 100%; height: 800px">
                             <h1>Nút bấm truyền thống dễ thao tác hơn màn hình cảm ứng trên ô tô</h1>
                         </a>
                         
@@ -247,12 +247,12 @@
                     <div class="col-md-6 col-12 shadow">
                         <div>
                             <a href="#">
-                                <img src="../images/news2.jpg" alt="hình" style="width: 100%; height: 400px">
+                                <img src="../../images/news2.jpg" alt="hình" style="width: 100%; height: 400px">
                                 <h1>Những lưu ý khi thay lốp dự phòng cho ô tô</h1>
                             </a>
                             
                             <a href="#">
-                                <img src="../images/news3.jpg" alt="hình" style="width: 100%; height: 400px">
+                                <img src="../../images/news3.jpg" alt="hình" style="width: 100%; height: 400px">
                                 <h1>Khám phá Mercedes-AMG GT3 Edition 55: chiếc xe đua phiên bản giới hạn</h1>
                             </a>
                             
