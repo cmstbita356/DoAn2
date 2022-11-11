@@ -39,7 +39,7 @@
         <div class='content'>
             <div style='text-align: center'>
                 <div class="searchBar">
-                    <form action="timkiem.php" id="searchBox">
+                    <form action="../TimKiem/" id="searchBox">
                         <input type="text" id="searchText" placeholder="Nhập từ khoá" name="keyword">
                         <button type="submit" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </form>
