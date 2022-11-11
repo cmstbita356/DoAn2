@@ -41,7 +41,7 @@
     {
         echo
         "
-            <a style='color: black; margin-left: 5px;' href='./?page=".$i."'>$i</a>|
+            <a style='color: black; margin-left: 5px;' href='./index.php?id=".$_GET['id']."&page=".$i."'>$i</a>|
         ";
     }
     echo "</div>"
