@@ -53,8 +53,6 @@ class SanphamController
                 include_once "../../Views/Home/Xemsanpham.php";
             }
         }
-
-        
     }
 }
 ?>

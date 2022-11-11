@@ -80,7 +80,8 @@
             $valuetime = ($time == '0')? "" : $time; 
             $valuemaker = ($id_maker == 0)? "%%" : $id_maker; 
             $valueprice = ($price == 0)? 10000000000 : $price; 
-            $result = ExecuteQuery($link, "select * from tbl_product where time like '%".$valuetime."%' and id_maker like '$valuemaker' and price <= $valueprice and state = 1 limit $from, $size");
+            $result = ExecuteQuery($link, 
+            "select * from tbl_product where time like '%".$valuetime."%' and id_maker like '$valuemaker' and price <= $valueprice and state = 1 limit $from, $size");
             $data = array();
             while($rows = mysqli_fetch_assoc($result))
             {

@@ -4,12 +4,14 @@
     class UserModel
     {
         function dangky($link, $username, $password, $email, $idquyen)
-    {
-        return ExecuteNonQuery($link, "insert into tbl_user (username, password, email, id_quyen) values ('".mysqli_real_escape_string($link, $username)."', '".md5($password)."', '".$email."', $idquyen)");
+        {
+        return ExecuteNonQuery($link, 
+        "insert into tbl_user (username, password, email, id_quyen) values ('".mysqli_real_escape_string($link, $username)."', '".md5($password)."', '".$email."', $idquyen)");
         }
         function dangnhap($link, $username, $password)
         {
-            $result = ExecuteQuery($link, "select count(*), id_quyen from tbl_user where username='".mysqli_real_escape_string($link, $username)."' and password ='".md5($password)."'");
+            $result = ExecuteQuery($link, 
+            "select count(*), id_quyen from tbl_user where username='".mysqli_real_escape_string($link, $username)."' and password ='".md5($password)."'");
             $rows = mysqli_fetch_row($result);
             if($rows[0] > 0)
             {

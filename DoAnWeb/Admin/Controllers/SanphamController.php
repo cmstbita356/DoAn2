@@ -80,7 +80,8 @@ include_once "../../Models/db_module.php";
                 if($this->makermodel->checkId($id_maker))
                 {
                     ConnectDatabase($link);
-                    ExecuteNonQuery($link, "update `tbl_product` set `name`='".$name."',`price`=$price,`desc`='".$desc."',`img`='".$img."',`id_maker`=".$id_maker.",`time`='".$time."' WHERE id = $id");
+                    ExecuteNonQuery($link, 
+                    "update `tbl_product` set `name`='".$name."',`price`=$price,`desc`='".$desc."',`img`='".$img."',`id_maker`=".$id_maker.",`time`='".$time."' WHERE id = $id");
                     header("Location: ../../Views/Home/index.php");
                 }
                 else
@@ -116,7 +117,9 @@ include_once "../../Models/db_module.php";
                 {
                     $link = null;
                     ConnectDatabase($link);
-                    ExecuteNonQuery($link, "insert into tbl_product (`name`, `price`, `desc`, `img`, `id_maker`, `time`, `state`) values ('".$name."', ".$price.", '".$desc."', '".$img."', ".$id_maker.", '".$time."', 1)");
+                    ExecuteNonQuery($link, 
+                    "insert into tbl_product (`name`, `price`, `desc`, `img`, `id_maker`, `time`, `state`) 
+                    values ('".$name."', ".$price.", '".$desc."', '".$img."', ".$id_maker.", '".$time."', 1)");
                     header("Location: ../../Views/Home/index.php");
                 }
                 else

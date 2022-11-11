@@ -27,7 +27,7 @@
                     <a class="ml-4" href="../DonHang">Đơn hàng</a>
                 </div>
                 <div class="header-right">
-                    <img class="rounded-circle" style='width:80px' src="../../imgs/image-account.jpg" alt="">
+                    <img class="user rounded-circle"  src="../../imgs/image-account.jpg" alt="">
                     <label for='ckb_tk' id='lb_tk'><?php echo $_SESSION['username'] ?></label><br>
                     <input type='checkbox' id='ckb_tk'>
                     <div id='tk'>
@@ -84,5 +84,31 @@
         font-size: 25px;
         width: 200px;
     }
+
+    .header-left
+    {
+    font-size: 25px;  
+    display: inline-block;
+    }
+    .user
+    {
+        width:80px;
+    }
+@media screen and (max-width: 999px) {
+    .header-left
+    {
+        font-size: 15px;  
+        display: inline-block;
+    }
+    #lb_tk
+    {
+    font-size: 15px;
+    }
+    .user
+    {
+        width:40px;
+    }
+    
+}
 </style>
 </html>

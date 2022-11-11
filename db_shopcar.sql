@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2022 at 02:57 AM
+-- Generation Time: Nov 11, 2022 at 02:10 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -32,7 +32,7 @@ USE `db_shopcar`;
 CREATE TABLE `tbl_chitietdh` (
   `id_dh` int(11) NOT NULL,
   `id_product` int(11) NOT NULL,
-  `price` int(11) NOT NULL,
+  `price` bigint(11) NOT NULL,
   `soluong` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -96,7 +96,7 @@ INSERT INTO `tbl_comment` (`id`, `username`, `msg`, `date`, `id_product`) VALUES
 CREATE TABLE `tbl_donhang` (
   `id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `thanhtien` int(11) NOT NULL,
+  `thanhtien` bigint(11) NOT NULL,
   `date` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `status` bit(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -222,16 +222,25 @@ INSERT INTO `tbl_user` (`id`, `username`, `password`, `email`, `id_quyen`) VALUE
 --
 
 --
+-- Indexes for table `tbl_chitietdh`
+--
+ALTER TABLE `tbl_chitietdh`
+  ADD KEY `FK_ctdh_dh` (`id_dh`),
+  ADD KEY `FK_ctdh_pro` (`id_product`);
+
+--
 -- Indexes for table `tbl_comment`
 --
 ALTER TABLE `tbl_comment`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FK_cm_pro` (`id_product`);
 
 --
 -- Indexes for table `tbl_donhang`
 --
 ALTER TABLE `tbl_donhang`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FK_dh_user` (`id_user`);
 
 --
 -- Indexes for table `tbl_maker`
@@ -243,7 +252,8 @@ ALTER TABLE `tbl_maker`
 -- Indexes for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FK_pro_maker` (`id_maker`);
 
 --
 -- Indexes for table `tbl_quyen`
@@ -256,7 +266,8 @@ ALTER TABLE `tbl_quyen`
 --
 ALTER TABLE `tbl_user`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`);
+  ADD UNIQUE KEY `username` (`username`),
+  ADD KEY `FK_user_quyen` (`id_quyen`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -297,6 +308,41 @@ ALTER TABLE `tbl_quyen`
 --
 ALTER TABLE `tbl_user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tbl_chitietdh`
+--
+ALTER TABLE `tbl_chitietdh`
+  ADD CONSTRAINT `FK_ctdh_dh` FOREIGN KEY (`id_dh`) REFERENCES `tbl_donhang` (`id`),
+  ADD CONSTRAINT `FK_ctdh_pro` FOREIGN KEY (`id_product`) REFERENCES `tbl_product` (`id`);
+
+--
+-- Constraints for table `tbl_comment`
+--
+ALTER TABLE `tbl_comment`
+  ADD CONSTRAINT `FK_cm_pro` FOREIGN KEY (`id_product`) REFERENCES `tbl_product` (`id`);
+
+--
+-- Constraints for table `tbl_donhang`
+--
+ALTER TABLE `tbl_donhang`
+  ADD CONSTRAINT `FK_dh_user` FOREIGN KEY (`id_user`) REFERENCES `tbl_user` (`id`);
+
+--
+-- Constraints for table `tbl_product`
+--
+ALTER TABLE `tbl_product`
+  ADD CONSTRAINT `FK_pro_maker` FOREIGN KEY (`id_maker`) REFERENCES `tbl_maker` (`id`);
+
+--
+-- Constraints for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  ADD CONSTRAINT `FK_user_quyen` FOREIGN KEY (`id_quyen`) REFERENCES `tbl_quyen` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
