@@ -82,7 +82,7 @@
 {
     height: 500px
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 850px) {
     .footer-wrap-3
     {
         display: none;

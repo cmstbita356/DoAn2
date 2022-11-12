@@ -1,13 +1,13 @@
 <?php
 include_once "../../Models/db_module.php";
-include_once "../../Models/SanPhamModel.php";
+include_once "../../Models/SanphamModel.php";
 
     class KhoiPhucController
     {
         public $model;
         function __construct()
         {
-            $this->model = new SanPhamModel();
+            $this->model = new SanphamModel();
         }
         function XulyKhoiPhuc()
         {
